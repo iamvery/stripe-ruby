@@ -137,7 +137,7 @@ module Stripe
     end
 
     def _dump(level)
-      Marshal.dump([@values, @opts])
+      Marshal.dump([@values, @opts.clone.delete(:client)])
     end
 
     def self._load(args)
